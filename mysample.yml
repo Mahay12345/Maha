@@ -5,4 +5,4 @@
         - name: I want to install tree software
           apt:
                name: tree
-               state: Present
+               state: present
