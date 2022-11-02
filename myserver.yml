@@ -2,7 +2,7 @@
 - hosts: all
   become: yes
   tasks:
-        - name: I want to install tree software
+        - name: I want to install web server on ubuntu node
           apt:
-               name: tree
-               state: absent
+               name: apache 2
+               state: present
