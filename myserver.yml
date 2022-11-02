@@ -6,3 +6,12 @@
           apt:
                name: apache2
                state: present
+
+- hosts: all
+  become: yes
+  tasks:
+        - name: I want to start web server on ubuntu node
+          service:
+                   name: apache2
+                   state: started
+                     

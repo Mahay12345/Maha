@@ -6,3 +6,11 @@
           apt:
                name: tree
                state: present
+
+- hosts: all
+  become: yes
+  tasks:
+        - name: I want to install wget software
+          apt:
+               name: wget
+               state: present               
