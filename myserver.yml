@@ -13,5 +13,5 @@
         - name: I want to start web server on ubuntu node
           service:
                    name: apache2
-                   state: started
+                   state: stopped
                      
