@@ -14,5 +14,13 @@
           service:
                    name: apache2
                    state: started
-                   
-                     
+
+- hosts: all
+  become: yes                    
+  tasks:                 
+        - name: I want to check ansible os family    
+          service:
+                   name: apache2
+                   state: started 
+          when: ansible_os_family== "Debian"
+        
