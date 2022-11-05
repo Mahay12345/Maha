@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+        - name: I want to install java8 version on ubuntu node
+          apt:
+               name: openjdk-8-jre
+               state: absent
+          when: ansible_os_family== "Debian"     
+
+
+        - name: I want to install java8 version on RedHat node
+          yum:
+               name: java-1.8.0-openjdk
+               state: present
+          when: ansible_os_family== "RedHat"       
