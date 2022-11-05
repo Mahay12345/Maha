@@ -5,19 +5,19 @@
         - name: I want to install web server on ubuntu node
           apt:
                name: apache2
-               state: absent
+               state: present
 
 
         - name: I want to start web server on ubuntu node
           service:
                    name: apache2
-                   state: stopped
+                   state: started
 
  
         - name: I want to check ansible os family    
           service:
                    name: apache2
-                   state: stopped 
+                   state: started 
           when: ansible_os_family== "Debian"
 
 
