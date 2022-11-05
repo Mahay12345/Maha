@@ -2,24 +2,19 @@
 - hosts: all
   become: yes
   tasks:
-        - name: I want to install web server on ubuntu node
+        - name: I want to install webserver on ubuntu node
           apt:
                name: apache2
                state: present
+          when: ansible_os_family== "Debian"     
 
 
-        - name: I want to start web server on ubuntu node
+        - name: I want to start/stop webserver on ubuntu node
           service:
                    name: apache2
                    state: started
-
- 
-        - name: I want to check ansible os family    
-          service:
-                   name: apache2
-                   state: started 
-          when: ansible_os_family== "Debian"
-
+          when: ansible_os_family== "Debian"     
+         
 
         - name: I want to install webserver on redhat node
           yum:
@@ -28,7 +23,7 @@
           when: ansible_os_family== "RedHat"
 
 
-        - name: I want to start webserver on redhat node
+        - name: I want to start/stop webserver on redhat node
           service:
                    name: httpd
                    state: started 
