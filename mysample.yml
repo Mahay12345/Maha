@@ -5,12 +5,22 @@
         - name: I want to install tree software
           apt:
                name: tree
-               state: present
+               state: absent
 
-- hosts: all
-  become: yes
-  tasks:
+
         - name: I want to install wget software
           apt:
                name: wget
-               state: present               
+               state: absent  
+
+
+        - name: I want to install tree software
+          yum:
+               name: tree
+               state: present    
+
+
+        - name: I want to install wget software
+          yum:
+               name: wget
+               state: present                             
